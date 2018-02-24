@@ -24,7 +24,7 @@ button.onclick = function() {
     request.send(null);
 };
 
-var nameInput = document.getElementById("nametext");
+var nameInput = document.getElementById("name");
 var names = nameInput.value;
 var ul = document.getElementById('namesList');
 var submit = document.getElementById('btn');
