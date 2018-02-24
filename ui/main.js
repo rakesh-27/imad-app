@@ -20,6 +20,6 @@ button.onclick = function() {
             }
         }
     };
+    request.open('GET', 'http://rockeshkumawath26.imad.hasura-app.io/counter', true);
+    request.send(null);
 };
-request.open('GET', 'http://rockeshkumawath26.imad.hasura-app.io/counter', true);
-request.send(null);
