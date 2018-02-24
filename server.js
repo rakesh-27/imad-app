@@ -66,6 +66,14 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+var names = [];
+app.get('/submit-name', function(req, res){
+    var name = names.query.name;
+    names.push[name];
+    res.send(JSON.stringify(names));
+});
+
+
 var counter = 0;
 app.get('/counter', function(req, res){
    counter = counter + 1;
