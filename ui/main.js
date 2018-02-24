@@ -23,3 +23,16 @@ button.onclick = function() {
     request.open('GET', 'http://rockeshkumawath26.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+
+var nameInput = getElementById('name');
+var name = nameInput.value;
+var ul = getElementById('namesLIst');
+var submit = getElementById('btn');
+submit.onclick = funtion(){
+    var names = ['Rakesh', 'Harsha', 'Kaushik'];
+    var list = '';
+    for(var i=0; i<names.length; i++){
+        list += "<li>" + names[i] + "</li>";
+    }
+    ul.innerHTML = list;
+}
