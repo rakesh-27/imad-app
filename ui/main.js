@@ -4,7 +4,7 @@ function moveRight(){
     mar = mar+1;
     img.style.marginLeft = mar + 'px';
 }
-var img = documentgetElementById('madi');
+var img = document.getElementById('madi');
 img.onclick = function(){
     var interval = setInterval(moveRight, 50);
 }
