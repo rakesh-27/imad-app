@@ -1,7 +1,7 @@
 console.log('Loaded!');
 var mar = 0;
 function moveRight(){
-    mar = mar+1;
+    mar = mar+0.5;
     img.style.marginLeft = mar + 'px';
 }
 var img = document.getElementById('madi');
