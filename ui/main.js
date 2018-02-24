@@ -9,14 +9,14 @@ img.onclick = function(){
     var interval = setInterval(moveRight, 10);
 };
 var button = document.getElementById('counter');
-var span = document.getElementById('count');
+var sp = document.getElementById("cnt");
 button.onclick = function() {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readystate === XMLHttpRequest.DONE){
             if(request.status === 200){
                 var counter = request.responseText;
-                span.textcontent = counter.toString();
+                sp.textcontent = counter.toString();
             }
         }
     };
