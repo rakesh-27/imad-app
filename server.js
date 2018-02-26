@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
+/*
 var config = {
     user : 'rockeshkumawath26',
     database: 'rockeshkumawath26',
@@ -14,7 +14,7 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 var pool = new Pool(config);
-
+*/
 
 
 var articles = {
@@ -69,7 +69,7 @@ function createTemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+/*
 var Pool = require('pq').Pool;
 app.get('/articles/:articleName', function(req, res){
     pool.query("SELECT * FROM ARTICLES WHERE TITLE = $1", [req.params.articleName], function(err, result){
@@ -87,7 +87,7 @@ app.get('/articles/:articleName', function(req, res){
 });
 // This can be hacked like this: /articles/';delete where 'a'='a 
 // so we need to use parametized input. i.e., it will take ';delete...' as an article name
-
+*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
