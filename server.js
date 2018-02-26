@@ -13,7 +13,7 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
-//var pool = new Pool(config);
+//
 
 
 
@@ -70,6 +70,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 /*
+var pool = new Pool(config);
 var Pool = require('pq').Pool;
 app.get('/articles/:articleName', function(req, res){
     pool.query("SELECT * FROM ARTICLES WHERE TITLE = $1", [req.params.articleName], function(err, result){
