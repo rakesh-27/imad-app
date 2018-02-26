@@ -2,6 +2,9 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var app = express();
+app.use(morgan('combined'));
+
 var Pool = require('pq').Pool;
 var config = {
     user : 'rockeshkumawath26',
@@ -12,8 +15,7 @@ var config = {
 };
 var pool = new Pool(config);
 
-var app = express();
-app.use(morgan('combined'));
+
 
 var articles = {
     'article-one': {
