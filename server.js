@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pq').Pool;
 
 var app = express();
 app.use(morgan('combined'));
@@ -69,7 +70,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var Pool = require('pq').Pool;
 var pool = new Pool(config);
 app.get('/articles/:articleName', function(req, res){
     pool.query("SELECT * FROM ARTICLES WHERE TITLE = $1", [req.params.articleName], function(err, result){
