@@ -69,7 +69,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/articles/:articleName', function(req, res){
-    pool.query("SELECT * FROM ARTICLES WHERE TITLE = " + "'" + req.params.articleName + "'", function(err, result){
+    pool.query("SELECT * FROM ARTICLES WHERE TITLE = $1", [req.params.articleName], function(err, result){
         if(err){
             res.status(500).send(err.toString());
         } else {
@@ -82,7 +82,8 @@ app.get('/articles/:articleName', function(req, res){
         }
     });
 });
-// This can be hacked like this: /articles/';delete where 'a'='a
+// This can be hacked like this: /articles/';delete where 'a'='a 
+// so we need to use parametized input. i.e., it will take ';delete...' as an article name
 
 
 app.get('/ui/style.css', function (req, res) {
