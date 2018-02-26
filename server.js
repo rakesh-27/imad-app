@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-/*
+
 var config = {
     user : 'rockeshkumawath26',
     database: 'rockeshkumawath26',
@@ -14,7 +14,7 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 var pool = new Pool(config);
-*/
+
 
 
 var articles = {
